@@ -1,13 +1,23 @@
 ghost:
   username: ghost
-  name: Ghost
+  name: ghost
   url_full: http://tarkil.dev/
   url: tarkil.dev
-  bio: The professional publishing platform
+  bio: Ingeniero informático de profesión y maestro de vocación.
   picture: assets/images/ghost.png
   facebook: ghost
-  twitter: tryghost
+  twitter: tarkil
   cover: False
+tarkil:
+  username: tarkil
+  name: tarkil
+  url_full: http://tarkil.dev/
+  url: tarkil.dev
+  bio: Ingeniero informático de profesión y maestro de vocación.
+  picture: assets/images/tarkil.jpg
+  facebook: ghost
+  twitter: tarkil
+  cover: assets/images/tarkil-cover.jpg
 hannah:
   username: hannah
   name: Hannah Wolfe
