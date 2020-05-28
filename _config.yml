@@ -96,3 +96,4 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
+excerpt_separator: <!--more-->

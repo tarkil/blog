@@ -11,7 +11,7 @@ subclass: 'post tag-jekyll'
 author: tarkil
 ---
 A pesar de que estoy de confinamiento, he estado bastante ocupado y no he sacado tiempo para publicar nada. Es una lástima porque una de los objetivos del blog es mejorar mi elocución. Hace bastante que no escribo y noto que estoy algo oxidado. Tal vez, haya sido así siempre y es ahora cuando me doy cuenta. Sin más dilaciones, vayamos al tema que nos ocupa.
-<!-- more -->
+<!--more-->
 Para el despliegue y hospedaje del blog hago uso de [Netlify](https://www.netlify.com/). La razón, como comenté [aquí]({% post_url 2020-04-19-fixing-broken-links %}), era que [GitHub](https://www.github.com) no generaba correctamente los sitios que hacen uso de _plugins_ de terceros. Para desplegarlo seguí la [guía](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/#step-2-link-to-your-github) de Netlify. La guía está muy bien explicada, así que voy a comentar los pasos de manera rápida:
  * Lo primero es vincular nuestra cuenta de GitHub con Netlify pulsando en _“New site from git”_  desde [https://app.netlify.com/](https://app.netlify.com/). 
  * Seleccionamos y autorizamos  el servicio de git que usamos. En mi caso GitHub.
