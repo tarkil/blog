@@ -1,7 +1,8 @@
 {% assign words_per_minute = site.words_per_minute | default: 200 %}
 
 {% for post in paginator.posts %}
-    <article class="post-card {{ page.class }}{% unless post.cover %} no-image{% endunless %}">
+    {% assign postRelativePosition = forloop.index | modulo: 6 %}
+    <article class="post-card {{ page.class }}{% unless post.cover %} no-image{% endunless %} {% if postRelativePosition == 1 %}post-card-large{% endif %} ">
         {% if post.cover %}
         <!-- TODO: Review sourceset-->
             <a class="post-card-image-link" href="{{ post.url | remove_first: '/' }}">
