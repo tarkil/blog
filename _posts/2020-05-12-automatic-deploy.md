@@ -27,5 +27,6 @@ Ya queda menos para dar por finalizada la “_base del blog_”. Las siguientes 
  * Elegir un logo y borrar los artículos de ejemplo.
  * Arreglar algunos temas de estilo que no me gustan.
  * Valorar la integración de [ _Discuss_](https://disqus.com/) o seguir sin comentarios.
+  
 Es bastante trabajo y me da pereza. Tendré que hacer un esfuerzo o no escribiré nunca nada.
 
