@@ -12,18 +12,18 @@ into the {body} of the default.hbs template -->
 <!-- The big featured header, it uses blog cover image as a BG if available -->
 <header class="site-home-header">
     {% include header-background.html %}
-    <div class="inner">
-        {% include site-header.html %}
-        {% include site-nav.html %}
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {% if site.logo %}
-                    <img class="site-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}"/>
-                {% else %}
-                    {{ site.title }}
-                {% endif %}
-            </h1>
-            <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
+        <div class="inner">
+            {% include site-nav.html %}
+            <div class="site-header-content">
+                <h1 class="site-title">
+                    {% if site.logo %}
+                        <img class="site-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}"/>
+                    {% else %}
+                        {{ site.title }}
+                    {% endif %}
+                </h1>
+                <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
+            </div>
         </div>
     </div>
 </header>
@@ -39,3 +39,4 @@ into the {body} of the default.hbs template -->
 
     </div>
 </main>
+{% include site-header.html %}
