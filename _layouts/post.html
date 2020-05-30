@@ -52,7 +52,7 @@ disqus: false
                                             <div class="author-info">
                                                 {% if author[1].bio %}
                                                 <div class="bio">
-                                                    <h2>{{ author[1].username }}</h2>
+                                                    <h2>{{ author[1].username | capitalize }}</h2>
                                                     <p>{{ author[1].bio }}</p>
                                                     <p><a href="{{ 'author/'  | relative_url }}{{ page.author }}">More posts</a> by {{ author[1].username }}.</p>
                                                 </div>
@@ -77,11 +77,25 @@ disqus: false
                         </ul>
                     
                         <section class="post-full-byline-meta">
-                            <h4 class="author-name">{{ page.author }}</h4>
+                            {% for author in site.data.authors %}
+                                {% if author[1].username == page.author %}
+                                    <h4 class="author-name"><a href="{{ 'author/' | relative_url }}{{ post.author }}/">{{ author[1].name }}</a></h4>
+                                {% endif %}
+                            {% endfor %}                           
                             <div class="byline-meta-content">
-                                <!-- TODO: Review it 
-                        
+                                <!-- TODO: Review it  
                                     -->
+                                {% assign words_per_minute = site.words_per_minute | default: 200 %}
+
+                                <time datetime="{{ page.next.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
+                                {% assign words = post.content | strip_html | number_of_words %}
+                                {% if words <= words_per_minute %}
+                                1 
+                                {% else %}
+                                {{ words | divided_by:words_per_minute }} 
+                                {% endif %}
+                                MIN READ
+                                </span>
                             </div>
                         </section>
 
@@ -222,6 +236,7 @@ src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous">
 </script>
+<script src="{{ base.url | prepend: site.url }}/assets/built/casper.js"></script>
 <script>
     $(document).ready(function () {
         // FitVids - start
@@ -230,11 +245,11 @@ crossorigin="anonymous">
         // FitVids - end
 
         // Replace nav with title on scroll - start
-       /* Casper.stickyNavTitle({
+        Casper.stickyNavTitle({
             navSelector: '.site-nav-main',
             titleSelector: '.post-full-title',
             activeClass: 'nav-post-title-active'
-        });*/
+        });
         // Replace nav with title on scroll - end
 
         // Hover on avatar
