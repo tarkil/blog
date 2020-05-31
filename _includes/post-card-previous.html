@@ -1,13 +1,13 @@
 {% assign words_per_minute = site.words_per_minute | default: 200 %}
 
-    <article class="post-card {{ page.previous.class }}{% unless page.previous.cover %} no-image{% endunless %}">
+    <article class="post-card {% if page.next.class == 'post-template' %} post {% else %} {{ page.next.class }} {% endif %}{% unless page.previous.cover %} no-image{% endunless %}">
         {% if page.previous.cover %}
             <a class="post-card-image-link" href="{{ page.previous.url  | relative_url | remove_first: '/' }}">
                 <!-- TODO: Review SoruceSet -->
                 <img class="post-card-image" 
                     loading="lazy" 
-                    src="{{ page.previous.cover | relative_url }})"
-                    alt="{{ page.title }}"
+                    src="{{ page.previous.cover | relative_url }}"
+                    alt="{{ page.previous.title }}"
                 />
             </a>
         {% endif %}
@@ -19,17 +19,18 @@
                             {% if forloop.index == page.previous.tags.size %}
                                 <div class="post-card-primary-tag">{{ tag | capitalize }}</div>
                             {% else %}
-                            <div class="post-card-primary-tag">{{ tag | capitalize }}</div>
+                                <div class="post-card-primary-tag">{{ tag | capitalize }}</div>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
 
+                    <h2 class="post-card-title">{{ page.previous.title }}</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    {% if post.excerpt %}
-                        <p>{{ post.excerpt | strip_html | truncatewords: 33, "" }}</p>
+                    {% if page.previous.cover %}
+                        <p>{{ page.previous.content | strip_html | truncatewords: 30, "" }}</p>
                     {% else %}
-                        <p>{{ post.content | strip_html | truncatewords: 33, "" }}</p>
+                        <p>{{ page.previous.content | strip_html | truncatewords: 40, "" }}</p>
                     {% endif %}
                 </section>
             </a>
@@ -58,16 +59,17 @@
                     <!-- TODO: SUpport multiple authors 
                     <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                     -->
-                    <span>{{ page.previous.author }}</span>
+                    <span><a href="{{ 'author/' | relative_url }}{{ page.previous.author }}/">{{ page.previous.author }}</a></span>
 
                     <span class="post-card-byline-date">
-                        <time datetime="{{ page.previous.date | date: '%Y-%m-%d %H:%M' }}">{{ page.previous.date | date: "%Y-%m-%d %H:%M" }}</time> <span class="bull">&bull;</span> 
-                        {% assign words = post.content | strip_html | number_of_words %}
+                        <time datetime="{{ page.previous.date | date: '%Y-%m-%d %H:%M' }}">{{ page.previous.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
+                        {% assign words = page.previous.content | strip_html | number_of_words %}
                         {% if words <= words_per_minute %}
                         1 
                         {% else %}
                         {{ words | divided_by:words_per_minute }} 
                         {% endif %}
+                        MIN READ
                     </span>
                 </div>
             </footer>

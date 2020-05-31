@@ -83,8 +83,6 @@ disqus: false
                                 {% endif %}
                             {% endfor %}                           
                             <div class="byline-meta-content">
-                                <!-- TODO: Review it  
-                                    -->
                                 {% assign words_per_minute = site.words_per_minute | default: 200 %}
 
                                 <time datetime="{{ page.next.date | date: '%Y-%m-%d %H:%M' }}">{{ page.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
@@ -95,7 +93,6 @@ disqus: false
                                 {{ words | divided_by:words_per_minute }} 
                                 {% endif %}
                                 MIN READ
-                                </span>
                             </div>
                         </section>
 
@@ -178,7 +175,7 @@ disqus: false
                     <article class="read-next-card">
                         <header class="read-next-card-header">
                             {% if primary %}
-                                <h3>><span>More in <a href="{{ 'tag/'  | relative_url }}{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a></span></h3>
+                                <h3><span>More in <a href="{{ 'tag/'  | relative_url }}{{ primary | downcase | replace: ' ', '-' }}/">{{ primary | capitalize }}</a></span></h3>
                             {% endif %}
                         </header>
                         <div class="read-next-card-content">
@@ -192,8 +189,15 @@ disqus: false
                                             <li>
                                                 <h4><a href="{{ post.url  | relative_url | remove_first: '/' }}">{{ post.title }}</a></h4>
                                                 <div class="read-next-card-meta">
-                                                    <p><time datetime="5">5</time> –
-                                                        reading time</p>
+                                                    <p><time datetime="{{ post.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date_to_string  }}</time>
+                                                        –
+                                                        {% assign words = post.content | strip_html | number_of_words %}
+                                                        {% if words <= words_per_minute %}
+                                                        1 
+                                                        {% else %}
+                                                        {{ words | divided_by:words_per_minute }} 
+                                                        {% endif %}
+                                                        min read</p>
                                                 </div>
                                             </li>
                                         {% endif %}
