@@ -1,24 +1,24 @@
-{% if site.cover and page.class != 'tag-template' %}
+{% if (site.cover and page.class == 'home-template') or background %}
 <style type="text/css">
     .responsive-header-img {
-        background-image: url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
+        background-image: url({% if background %}{{ background | strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
     }
     @media(max-width: 1000px) {
         .responsive-header-img {
-            background-image: url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
-            background-image: -webkit-image-set(url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
-                url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
-            background-image: image-set(url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
-                url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
+            background-image: url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
+            background-image: -webkit-image-set(url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
+                url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
+            background-image: image-set(url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
+                url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
         }
     }
     @media(max-width: 600px) {
         .responsive-header-img {
-            background-image: url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
-            background-image: -webkit-image-set(url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
-                url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
+            background-image: url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
+            background-image: -webkit-image-set(url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 1x,
+                url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}) 2x);
             background-image: image-set(url({{ site.cover  | relative_url }}) 1x,
-                url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}}) 2x);
+                url({% if background %}{{ background |  strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %}}) 2x);
         }
     }
 </style>

@@ -17,36 +17,39 @@ logo: 'assets/images/logo.png'
     {% if author[1].username == page.author %}
     <header class="site-archive-header">
         {% include site-header.html %}
-
-        {% include header-background.html %}
-        <div class="inner">
-            <div class="site-header-content author-header">
-                {% if author[1].picture %}
-                    <img class="author-profile-image" src="{{ author[1].picture  | relative_url }}" alt="{{ page.author }}" />
-                {% else %}
-                    <span class="author-profile-image"><!-- TODO: set default image -->></span>
-                {% endif %}
-                <div class="author-header-content">
-                    <h1 class="site-title">{{ author[1].name }}</h1>
-                    {% if author[1].bio %}
-                        <h2 class="author-bio">{{ author[1].bio }}</h2>
+        {% if author[1].cover %}
+            {% capture background  %}  {{author[1].cover }}   {% endcapture %}
+        {% endif %}
+        {% include header-background.html  %}
+            <div class="inner">
+                <div class="site-header-content author-header">
+                    {% if author[1].picture %}
+                        <img class="author-profile-image" src="{{ author[1].picture  | relative_url }}" alt="{{ page.author }}" />
+                    {% else %}
+                        <span class="author-profile-image"><!-- TODO: set default image -->></span>
                     {% endif %}
-                    <div class="author-meta">
-                        {% if author[1].location %}
-                            <div class="author-location">{{ author[1].location }}</div>
+                    <div class="author-header-content">
+                        <h1 class="site-title">{{ author[1].name | capitalize }}</h1>
+                        {% if author[1].bio %}
+                            <h2 class="author-bio">{{ author[1].bio }}</h2>
                         {% endif %}
-                        <div class="author-stats">
-                            {% if paginator.total_posts == 0 %}No posts{% elsif paginator.total_posts == 1 %}1 post{% else %}{{ paginator.total_posts }} posts{% endif %}
+                        <div class="author-meta">
+                            {% if author[1].location %}
+                                <div class="author-location">{{ author[1].location }}</div>
+                            {% endif %}
+                            <div class="author-stats">
+                                {% if paginator.total_posts == 0 %}No posts{% elsif paginator.total_posts == 1 %}1 post{% else %}{{ paginator.total_posts }} posts{% endif %}
+                            </div>
+                            {% if author[1].url %}
+                                <span class="author-social-link"><a href="{{ author[1].url_full }}" target="_blank" rel="noopener">Website</a></span>
+                            {% endif %}
+                            {% if author[1].twitter %}
+                                <span class="author-social-link"><a href="https://twitter.com/{{ author[1].twitter }}" target="_blank" rel="noopener">Twitter</a></span>
+                            {% endif %}
+                            {% if author[1].facebook %}
+                                <span class="author-social-link"><a href="https://facebook.com/{{ author[1].facebook }}" target="_blank" rel="noopener">Facebook</a></span>
+                            {% endif %}
                         </div>
-                        {% if author[1].url %}
-                            <span class="author-social-link"><a href="{{ author[1].url_full }}" target="_blank" rel="noopener">{% include website.html %}</a></span>
-                        {% endif %}
-                        {% if author[1].twitter %}
-                            <span class="author-social-link"><a class="author-social-link" href="https://twitter.com/{{ author[1].twitter }}" target="_blank" rel="noopener">{% include twitter.html %}</a></span>
-                        {% endif %}
-                        {% if author[1].facebook %}
-                            <span class="author-social-link"><a class="social-link social-link-fb" href="https://facebook.com/{{ author[1].facebook }}" target="_blank" rel="noopener">{% include facebook.html %}</a></span>
-                        {% endif %}
                     </div>
                 </div>
             </div>
