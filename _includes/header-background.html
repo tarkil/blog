@@ -1,4 +1,4 @@
-{% if site.cover %}
+{% if site.cover and page.class != 'tag-template' %}
 <style type="text/css">
     .responsive-header-img {
         background-image: url({% if author[1].cover %}{{ author[1].cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});
