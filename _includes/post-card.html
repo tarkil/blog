@@ -14,7 +14,7 @@
             </a>
         {% endif %}
         <div class="post-card-content">
-            <a class="post-card-content-link" href="{{ post.url | remove_first: '/' }}">
+            <a class="post-card-content-link" href="{{ baseurl }}/{{ post.url | relative_url  | remove_first: '/' }}">
                 <header class="post-card-header">
                     {% if post.tags.size > 0 %}
                         {% for tag in post.tags %}
@@ -69,7 +69,7 @@
                     {% endfor %}
 
                     <span class="post-card-byline-date">
-                        <time datetime="{{ page.next.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
+                        <time datetime="{{ post.date | date: '%Y-%m-%d %H:%M' }}">{{ post.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
                         {% assign words = post.content | strip_html | number_of_words %}
                         {% if words <= words_per_minute %}
                         1 
