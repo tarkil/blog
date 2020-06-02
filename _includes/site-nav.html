@@ -9,10 +9,10 @@
             {% endif %}
             <div class="site-nav-content">
 
-                {% if page.navigation %}
+                {% if page.navigation or page.current == 'error' %}
                     {% include navigation.html %}
                 {% endif %}
-                {% if page.current != 'home' %}
+                {% if page.current != 'home' and page.current != 'error' %}
                     {% if site.logo %}
                         <span class="nav-post-title">{{ page.title }}</span>
                     {% else %}

@@ -11,54 +11,92 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ page.title }}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.css' | relative_url }}" />
-    <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.edited.css' | relative_url }}" />
-    <!-- This tag outputs SEO meta+structured data and other important settings -->
-    {% include head.html %}
-</head>
-<body class="error-template">
-    <div class="site-wrapper">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{{ page.title }}</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.css' | relative_url }}" />
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.edited.css' | relative_url }}" />
+        <!-- This tag outputs SEO meta+structured data and other important settings -->
+        {% include head.html %}
+    </head>
+    <body>
+        <div class="site-wrapper">
 
-        <header class="site-header outer {% if page.cover %}" style="background-image: url({{ page.cover | relative_url }})){% else %}no-cover{% endif %}">
-            <div class="inner">
-                <nav class="site-nav-center">
-                    {% if site.logo %}
-                        <a class="site-nav-logo" href="{{ site.baseurl }}"><img src="{{site.logo | relative_url }}" alt="{{ site.title }}" /></a>
-                    {% else %}
-                        <a class="site-nav-logo" href="{{ site.baseurl }}">{{ site.title }}</a>
-                    {% endif %}
-                </nav>
-            </div>
-        </header>
+            <header class="site-header">
+                {% include site-header.html %}
+            </header>
 
-        <main id="site-main" class="site-main outer" role="main">
-            <div class="inner">
+            <main id="site-main" class="site-main outer error-content">
+                <div class="inner">
 
-                <section class="error-message">
-                    <h1 class="error-code">404</h1>
-                    <p class="error-description">Page not found</p>
-                    <a class="error-link" href="{{ site.baseurl }}">Go to the front page →</a>
-                </section>
-            </div>
-        </main>
-
-        <!-- get "posts" limit="3" -->
-        <aside class="outer">
-            <div class="inner">
-                <div class="post-feed">
-                    <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
-                    {%  include post-card-error.html %}
+                    <section class="error-message">
+                        <h1 class="error-code">404</h1>
+                        <p class="error-description">Page not found</p>
+                        <a class="error-link" href="{{ site.baseurl }}">Go to the front page →</a>
+                    </section>
+                    <div class="post-feed">
+                        <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+                        {%  include post-card-error.html %}
+                    </div>
                 </div>
-            </div>
-        </aside>
-        <!-- /get -->
+            </main>
+            
+            <footer class="site-footer outer">
+                <div class="site-footer-content inner">
+                    <section class="copyright"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
+                    <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                        <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                    <nav class="site-footer-nav">
+                        <a href="{{ site.baseurl }}">Latest Posts</a>
+                        {% if site.facebook %}<a href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+                        {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
+                        <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                    </nav>
+                </div>
+            </footer>
+        </div>
 
-    </div>
-</body>
+        {{!-- jQuery, required for fitvids --}}
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+        </script>
+        {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
+        <script src="{{ base.url | prepend: site.url }}/assets/built/casper.js"></script>
+    
+        {{!-- Scripts for Members subscription --}}
+        <script>
+            // Parse the URL parameter
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+            // Give the parameter a variable name
+            var action = getParameterByName('action');
+            $(document).ready(function () {
+                if (action == 'subscribe') {
+                    $('body').addClass("subscribe-success");
+                }
+                $('.subscribe-success-message .subscribe-close').click(function () {
+                    $('.subscribe-success-message').addClass('close');
+                });
+                // Reset form on opening subscrion overlay
+                $('.subscribe-button').click(function() {
+                    $('.subscribe-overlay form').removeClass();
+                    $('.subscribe-email').val('');
+                });
+            });
+        </script>
+
+    </body>
 </html>
