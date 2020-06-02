@@ -10,16 +10,18 @@ disqus: false
 into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer">
-    <div class="inner">
-        {% include site-nav.html %}
+<header class="site-header">
+    <div class="outer site-nav-main">
+        <div class="inner">
+            {% include site-nav.html %}
+        </div>
     </div>
 </header>
 
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<main id="site-main" class="site-main outer" role="main">
+<main id="site-main" class="site-main outer">
     <div class="inner">
 
         <article class="post-full {{ page.subclass }} {% unless page.cover %}no-image{% endunless %}">
@@ -29,12 +31,22 @@ into the {body} of the default.hbs template -->
             </header>
 
             {% if page.cover %}
-            <figure class="post-full-image" style="background-image: url({{ page.cover | relative_url }})">
-            </figure>
+                <figure class="post-full-image">
+                    <!-- TODO: Review sourceset -->
+                    <img
+                    sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 1170px,
+                            2000px"
+                    src="{{ page.cover | relative_url }"
+                    alt="{{ page.title}}"
+                    />
+                </figure>
             {% endif %}
 
             <section class="post-full-content">
-                {{ content }}
+                <div class="post-content">
+                    {{ content }}
+                </div>
             </section>
 
         </article>
