@@ -79,7 +79,7 @@ disqus: false
                         <section class="post-full-byline-meta">
                             {% for author in site.data.authors %}
                                 {% if author[1].username == page.author %}
-                                    <h4 class="author-name"><a href="{{ 'author/' | relative_url }}{{ post.author }}/">{{ author[1].name }}</a></h4>
+                                    <h4 class="author-name"><a href="{{ 'author/' | relative_url }}{{ page.author }}/">{{ author[1].name }}</a></h4>
                                 {% endif %}
                             {% endfor %}                           
                             <div class="byline-meta-content">
