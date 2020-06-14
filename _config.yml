@@ -47,6 +47,7 @@ plugins_dir: [_plugins]
 plugins: 
   - jekyll-paginate
   - jekyll-feed
+  - jemoji
 
 feed:
   path: feed.xml
