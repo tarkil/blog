@@ -11,8 +11,8 @@ baseurl: /
 # Website info
 title: Las cosas de Tarkil
 description: El lugar donde recojo y comparto mis pensamientos
-cover: assets/images/blog-cover.jpg
-logo: assets/images/blog-icon.png
+#cover: assets/images/blog-cover.jpg
+logo: assets/images/logo.svg
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
 production_url: https://tarkil.dev/
@@ -47,6 +47,7 @@ plugins_dir: [_plugins]
 plugins: 
   - jekyll-paginate
   - jekyll-feed
+  - jemoji
 
 feed:
   path: feed.xml
@@ -96,3 +97,4 @@ exclude:
   - changelog.md
   - "*.Rmd"
   - .git*
+excerpt_separator: <!--more-->

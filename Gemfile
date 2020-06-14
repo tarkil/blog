@@ -7,3 +7,5 @@ gem 'wdm', '>= 0.1.0'
 
 gem "jekyll-paginate",  "~> 1.1.0"
 gem "jekyll-feed",  "~> 0.13.0"
+
+gem 'jemoji', "~> 0.12.0"

@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c56d0a8e-f516-4032-95e0-4f9a4508a240/deploy-status)](https://app.netlify.com/sites/elastic-engelbart-c8119c/deploys)
 ## Jasper2
 
 [![Build Status](https://travis-ci.org/jekyller/jasper2.svg?branch=master)](https://travis-ci.org/jekyller/jasper2)

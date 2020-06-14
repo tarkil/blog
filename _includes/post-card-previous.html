@@ -1,9 +1,14 @@
 {% assign words_per_minute = site.words_per_minute | default: 200 %}
 
-    <article class="post-card {{ page.previous.class }}{% unless page.previous.cover %} no-image{% endunless %}">
+    <article class="post-card {% if page.next.class == 'post-template' %} post {% else %} {{ page.next.class }} {% endif %}{% unless page.previous.cover %} no-image{% endunless %}">
         {% if page.previous.cover %}
             <a class="post-card-image-link" href="{{ page.previous.url  | relative_url | remove_first: '/' }}">
-                <div class="post-card-image" style="background-image: url({{ page.previous.cover | relative_url }})"></div>
+                <!-- TODO: Review SoruceSet -->
+                <img class="post-card-image" 
+                    loading="lazy" 
+                    src="{{ page.previous.cover | relative_url }}"
+                    alt="{{ page.previous.title }}"
+                />
             </a>
         {% endif %}
         <div class="post-card-content">
@@ -12,9 +17,9 @@
                     {% if page.previous.tags.size > 0 %}
                         {% for tag in page.previous.tags %}
                             {% if forloop.index == page.previous.tags.size %}
-                                <span class="post-card-tags">{{ tag | capitalize }}</span>
+                                <div class="post-card-primary-tag">{{ tag | capitalize }}</div>
                             {% else %}
-                               <span class="post-card-tags">{{ tag | capitalize }}</span>
+                                <div class="post-card-primary-tag">{{ tag | capitalize }}</div>
                             {% endif %}
                         {% endfor %}
                     {% endif %}
@@ -22,32 +27,51 @@
                     <h2 class="post-card-title">{{ page.previous.title }}</h2>
                 </header>
                 <section class="post-card-excerpt">
-                    {% if post.excerpt %}
-                        <p>{{ post.excerpt | strip_html | truncatewords: 33, "" }}</p>
+                    {% if page.previous.cover %}
+                        <p>{{ page.previous.content | strip_html | truncatewords: 30, "" }}</p>
                     {% else %}
-                        <p>{{ post.content | strip_html | truncatewords: 33, "" }}</p>
+                        <p>{{ page.previous.content | strip_html | truncatewords: 40, "" }}</p>
                     {% endif %}
                 </section>
             </a>
             <footer class="post-card-meta">
-                {% for author in site.data.authors %}
-                    {% if author[1].username == page.previous.author %}
-                        {% if author[1].picture %}
-                        <img class="author-profile-image" src="{{ author[1].picture  | relative_url }}" alt="{{ author[1].name }}" />
+                <ul class="author-list">
+                    {% for author in site.data.authors %}
+                        {% if author[1].username == page.previous.author %}
+                        <li class="author-list-item">
+                            <div class="author-name-tooltip">
+                                {{  author[1].name }}
+                            </div>
+                            {% if author[1].picture %}
+                            <a href="{{ 'author/' | relative_url }}{{ page.previous.author }}/"  class="static-avatar">
+                                <img class="author-profile-image" src="{{ author[1].picture | relative_url }}" alt="{{ author[1].name }}" />
+                            </a>
+                            {% else %}
+                            <a href="{{ 'author/' | relative_url }}{{ page.previous.author }}/"  class="static-avatar">
+                                <img class="author-profile-image" src="{{ 'todo: blank.png' | relative_url }}" alt="{{ author[1].name }}" />
+                            </a>
+                            {% endif %}
+                        </li>
                         {% endif %}
-                        <span class="post-card-author">
-                            <a href="{{ ''author/'  | relative_url }}{{ page.previous.author }}/">{{ author[1].name }}</a>
-                        </span>
-                    {% endif %}
-                {% endfor %}
-                <span class="reading-time">
-                    {% assign words = post.content | strip_html | number_of_words %}
-                    {% if words <= words_per_minute %}
-                      1 min read
-                    {% else %}
-                      {{ words | divided_by:words_per_minute }} min read
-                    {% endif %}
-                </span>
+                    {% endfor %}
+                </ul>
+                <div class="post-card-byline-content">
+                    <!-- TODO: SUpport multiple authors 
+                    <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+                    -->
+                    <span><a href="{{ 'author/' | relative_url }}{{ page.previous.author }}/">{{ page.previous.author }}</a></span>
+
+                    <span class="post-card-byline-date">
+                        <time datetime="{{ page.previous.date | date: '%Y-%m-%d %H:%M' }}">{{ page.previous.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
+                        {% assign words = page.previous.content | strip_html | number_of_words %}
+                        {% if words <= words_per_minute %}
+                        1 
+                        {% else %}
+                        {{ words | divided_by:words_per_minute }} 
+                        {% endif %}
+                        MIN READ
+                    </span>
+                </div>
             </footer>
         </div>
     </article>

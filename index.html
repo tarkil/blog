@@ -10,25 +10,27 @@ navigation: True
 into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer {% if page.cover or site.cover %}" style="background-image:  url({% if page.cover %}{{ page.cover | relative_url }}{% elsif site.cover %}{{ site.cover | relative_url }}{% endif %}) {% else %}no-cover{% endif %}">
-    <div class="inner">
-        <div class="site-header-content">
-            <h1 class="site-title">
-                {% if site.logo %}
-                    <img class="site-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}"/>
-                {% else %}
-                    {{ site.title }}
-                {% endif %}
-            </h1>
-            <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
+<header class="site-home-header">
+    {% include header-background.html %}
+        <div class="inner">
+            {% include site-nav.html %}
+            <div class="site-header-content">
+                <h1 class="site-title">
+                    {% if site.logo %}
+                        <img class="site-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}"/>
+                    {% else %}
+                        {{ site.title }}
+                    {% endif %}
+                </h1>
+                <h2 class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h2>
+            </div>
         </div>
-        {% include site-nav.html %}
     </div>
 </header>
 
 <!-- The main content area -->
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
+<main id="site-main" class="site-main outer">
+    <div class="inner posts">
 
         <div class="post-feed">
             <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
@@ -37,3 +39,4 @@ into the {body} of the default.hbs template -->
 
     </div>
 </main>
+{% include site-header.html %}
