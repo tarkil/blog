@@ -11,8 +11,10 @@ subclass: 'post tag-jekyll'
 author: tarkil
 ---
 La semana pasada comentaba que tenía algunos problemas de enlaces rotos cuando construía el sitio mediante la acción de Jekyll de GitHub. La verdad es que no tenía nada claro cuál era la causa del problema, pues en local se veían perfectamente. 
-El error consistía en que muchos enlaces les faltaba una “/” en el _”path”_ de la url.  Ejemplo: `https://tarkil.dev/authorstarkil`, en vez de   `https://tarkil.dev/authors/tarkil`. No solo afectaba a las direcciones de los artículos, sino también a la carga de imágenes, javascripts y hojas de estilos.
 <!--more-->
+
+El error consistía en que muchos enlaces les faltaba una “/” en el _”path”_ de la url.  Ejemplo: `https://tarkil.dev/authorstarkil`, en vez de   `https://tarkil.dev/authors/tarkil`. No solo afectaba a las direcciones de los artículos, sino también a la carga de imágenes, javascripts y hojas de estilos.
+
 Investigando un poco descubrí que el problema estaba relacionado con la variable `site.baseurl` a la hora de concatenar las urls. La solución aunque trivial, era un poco tediosa: reemplazar ciertas ocurrencias de `site.url` con `relative_url`. Un [_commit_](https://github.com/tarkil/blog/commit/38ecd1f86b2d95e978092b0961a69512cb7d61fa) de ejemplo:
 
 ```html

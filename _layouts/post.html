@@ -117,8 +117,9 @@ disqus: false
             {% endif %}
 
             <section class="post-full-content">
-                <div class="post-content">
-                    {{content}}
+                <div class="post-content">  
+                    {% assign contentArray = content | markdownify | split: site.excerpt_separator  %}
+                    {{ contentArray.last | prepend: "<p>"}}
                 </div>
             </section>
 
