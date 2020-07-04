@@ -4,7 +4,7 @@ current: post
 cover: https://lh3.googleusercontent.com/pw/ACtC-3ceddWBWKPfgetCFPY7nrtvXTFgLYYPokZ-01KwVIwhE5VYV7ho7pPgU24OUHJ8MktSNstFMF_ZaajrSNTpvk8KrfO9Ije2KcDXtOdACArTG60lGWFG4adEliaj3PKyIRbg7MDPMG_2F6hgcWFOGTwGvQ=w1400-h617-no?authuser=0
 navigation: True
 title: Aplicaciones para la autenticación en dos pasos
-date: 2020-07-07 00:00:00
+date: 2020-07-04 00:00:00
 tags: utilidades
 class: post-template
 subclass: 'post tag-utilidades'
