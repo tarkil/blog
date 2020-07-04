@@ -9,7 +9,7 @@ words_per_minute: 200
 baseurl: /
 
 # Website info
-title: Las cosas de Tarkil
+title: El blog de Tarkil
 description: El lugar donde recojo y comparto mis pensamientos
 #cover: assets/images/blog-cover.jpg
 logo: assets/images/logo.svg
@@ -25,8 +25,8 @@ subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 twitter: tarkil # replace by your username
-facebook: ghost # replace by your username
-instagram: el_de_numenor
+#facebook: ghost # replace by your username
+instagram: el_blog_de_tarkil
 # Disqus
 disqus: False
 disqus_shortname: jekyller # replace with your disqus username
