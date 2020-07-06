@@ -15,7 +15,7 @@ tarkil:
   url: tarkil.dev
   bio: Ingeniero informático de profesión y maestro de vocación.
   picture: assets/images/tarkil.jpg
-  facebook: ghost
+  facebook: False
   twitter: tarkil
   instagram: el_blog_de_tarkil
   cover: assets/images/tarkil-cover.jpg

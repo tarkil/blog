@@ -28,11 +28,10 @@ Para dotar de mayor seguridad a nuestras cuentas de usuario, se suele ofrecer el
     * 🤖 [Android](https://play.google.com/store/apps/details?id=com.authy.authy)
     * 🍏 [Iphone](https://apps.apple.com/us/app/authy/id4941680174) 
     * 💻 [PC](https://authy.com/download/)
+> info "¡Ojo!"
+> Authy y LastPass Authenticator requieren número de teléfono y/o cuenta de sus servicio para usarlos
 
-> **Nota:** Authy LastPass Authenticator requieren número de teléfono y/o cuenta de sus servicio para usarlos
-
-  
-No obstante hay situaciones en las que no disponemos, o queremos hacer uso, del móvil, ni tampoco crearnos cuentas en servicios de tercero. Para estos casos existen soluciones como  la extensión de Chrome [Autenticador](https://chrome.google.com/webstore/detail/authenticator/bhghoamapcdpbohphigoooaddinpkbai?hl=es) o más completas como [KeePassXC](https://keepassxc.org/). La ventaja de KeePassXC es que puede  ser utilizado como gestor de contraseñas, a parte de como método de autenticación en dos pasos. Para aprender a utilizar KeePassXC os recomiendo leer este [artículo de ParanoidPenguin.net](https://blog.paranoidpenguin.net/2020/05/how-to-back-up-your-2fa-secret-keys-with-keepassxc/). 
+No obstante hay situaciones en las que no disponemos, o queremos hacer uso, del móvil, ni tampoco crearnos cuentas en servicios de tercero. Para estos casos existen soluciones como  la extensión de Chrome [Autenticador](https://chrome.google.com/webstore/detail/authenticator/bhghoamapcdpbohphigoooaddinpkbai?hl=es) o más completas como [KeePassXC](https://keepassxc.org/). La ventaja deeste último, es que además, puede  ser utilizado como gestor de contraseñas. Para aprender a utilizar KeePassXC os recomiendo leer este [artículo de ParanoidPenguin.net](https://blog.paranoidpenguin.net/2020/05/how-to-back-up-your-2fa-secret-keys-with-keepassxc/). 
 
 
 

@@ -47,8 +47,8 @@ plugins_dir: [_plugins]
 plugins: 
   - jekyll-paginate
   - jekyll-feed
-  - jemoji
-
+  - jekyll-spaceship
+  - premonition
 feed:
   path: feed.xml
 

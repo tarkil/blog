@@ -26,10 +26,14 @@ production stylesheet in assets/built/screen.css
 
 */
 
+/* Custom imports for el blog de Tarkil
+/*----------------------------------------------------------- */
+@import "premonition.css";
 
 /* 1. Global - Set up the things
 /* ---------------------------------------------------------- */
 @import "global.css";
+
 
 body {
     background: #fff;
