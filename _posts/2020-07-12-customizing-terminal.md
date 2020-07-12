@@ -12,9 +12,13 @@ author: tarkil
 ---
 Cada persona es un mundo y cada terminal un universo propio.
 <!--more-->
-Muchos asocian la terminal de comandos con los monitores monocromo de las décadas de los 60 a 80: pantallas negras con letras verdes carentes de sentido para los neófitos en la computación. Aunque la informática ha avanzado mucho desde entonces, us uso sigue siendo imprescindible en ciertas áreas, como la programación y sistemas. Sin embargo, a día de hoy  no tiene porqué ser fea y aburrida si sabes cómo configurarla.
+Muchos asocian la terminal de comandos con los monitores monocromo de las décadas de los 60 a 80: pantallas negras con letras verdes carentes de sentido para los neófitos en la computación. Aunque la informática ha avanzado mucho desde entonces, su uso sigue siendo imprescindible en ciertas áreas, como la programación y sistemas. Sin embargo, a día de hoy  no tiene porqué ser fea y aburrida si sabes cómo configurarla.
 
-A modo de ejemplo, aquí os dejo como tengo configurada mi terminal. Lo primero de todos es instalarnos [oh my zsh](https://ohmyz.sh/#install).
+A modo de ejemplo, aquí os dejo como tengo configurada mi terminal. 
+
+![Mi configuración de la terminal](https://lh3.googleusercontent.com/pw/ACtC-3cdZxDNG39INN6ibLKxHwXEBa5Kz0-O-hmmA-elKIbqYMIHN6Z580yWllQhjUgvQDWYp2_2W1tMXM0eyeDCZXpbi---VAccHDdvQTzCwlpkbaXElrngaZo3OSaLl2jtlPoP3EpQRa7KWaBdaO-k0G2Ehg=w1360-h508-no?authuser=0 "Mi terminal")
+
+Lo primero de todos es instalarnos [oh my zsh](https://ohmyz.sh/#install).
 
 > note "Requisito"
 > Es probable que necesitéis instalar zsh si no lo tenéis instalado ya.
@@ -30,5 +34,4 @@ En cuanto a los plugins que actualmente uso en el ordenador de casa son los sigu
 * [zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/) ofrece una sugerencia de cómo completar el comando
 * [zsh interactive cd plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/zsh-interactive-cd/) permite seleccionar de manera interactiva el directorio al que queremos ir.
 * [safe paste](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/safe-paste) evita que se ejecute el código que hemos pegado de manera automática.
-
 
