@@ -1,4 +1,4 @@
-{% if (site.cover and page.class == 'home-template') or background %}
+{% if  background or site.cover and page.class == 'home-template' %}
 <style type="text/css">
     .responsive-header-img {
         background-image: url({% if background %}{{ background | strip | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url}}{% endif %});

@@ -16,7 +16,12 @@ logo: 'assets/images/logo.png'
 {% include dynamic_tag_info.html %}
 <header class="site-archive-header">
     {% include site-header.html %}
-    {% include header-background.html %}
+
+    {% capture background %}
+        {{ cover }}
+    {% endcapture %}
+
+    {% include header-background.html background=background %}
 
         <div class="inner site-header-content">
             <h1 class="site-title">{{ page.tag | capitalizeall }}</h1>

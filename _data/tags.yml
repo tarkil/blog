@@ -22,3 +22,7 @@ development:
   name: desarrollo
   description: Artículos dedicados a tutoriales y novedades en el mundo de la programación.
   cover: False  
+trekking:
+  name: trekking
+  description: Mis excursiones a la naturaleza.
+  cover: https://lh3.googleusercontent.com/pw/ACtC-3eVgtzhTMm0A7d6FrcgEkkgnpBuIRj-LagrhkAMcztpG8kgUK92IUL76gXZTSWGcXxlMIIna4eds6soJUUOKBcQ3n_ncrGAli17v6_A3JPWZBJCTvTJqa2DWdGve3wqxuFctroBUeycGjn2GkiZAmzJFQ=w2306-h1297-no?authuser=0  
