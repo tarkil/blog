@@ -1,9 +1,21 @@
-<form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+<form data-members-form="subscribe" method="post" action="https://feedburner.google.com/fb/a/mailverify" method="post"
+ target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=ElBlogDeTarkil', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+ class="" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" type="email" validate name="email"  placeholder="youremail@example.com" autocomplete="false"/>
+        <button class="button primary" type="submit" {% unless site.subscribers %}disabled{% endunless %} onclick="$(this).parents('form').submit()">
+            <span class="button-content">Subscribe</span>
+            <span class="button-loader"></span>
+        </button>
+        <input type="hidden" value="ElBlogDeTarkil" name="uri"/>
+        <input type="hidden" name="loc" value="es_ES"/>
     </div>
-    <button class="" type="submit" {% unless site.subscribe %}disabled{% endunless %}><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+    <div class="message-success">
+        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+    </div>
+    <div class="message-error">
+        Please enter a valid email address!
+    </div>
+
 </form>
