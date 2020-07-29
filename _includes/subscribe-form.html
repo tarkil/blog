@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <input class="subscribe-email" type="email" validate name="email"  placeholder="youremail@example.com" autocomplete="false"/>
-        <button class="button primary" type="submit" {% unless site.subscribers %}disabled{% endunless %} onclick="$(this).parents('form').submit()">
+        <button class="button primary" type="submit" {% unless site.subscribers %}disabled{% endunless %} onclick="$(this).parent('form').submit();  $('#subscribe').hide()">
             <span class="button-content">Subscribe</span>
             <span class="button-loader"></span>
         </button>
