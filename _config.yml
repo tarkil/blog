@@ -28,8 +28,8 @@ twitter: tarkil # replace by your username
 #facebook: ghost # replace by your username
 instagram: el_blog_de_tarkil
 # Disqus
-disqus: False
-disqus_shortname: jekyller # replace with your disqus username
+disqus: True
+disqus_shortname: tarkil # replace with your disqus username
 
 # Google Analytics
 # google_analytics: UA-69281367-1 # replace with your GA tracking identifier
