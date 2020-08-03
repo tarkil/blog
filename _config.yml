@@ -1,8 +1,8 @@
 # Jekyll configuration
 markdown: kramdown
 highlighter: rouge
-paginate: 100 # it will paginate after this number
-language: 'es-es'
+paginate: 10 # it will paginate after this number
+language: 'es'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)

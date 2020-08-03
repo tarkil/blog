@@ -41,13 +41,9 @@
         <!-- Previous/next page links - displayed on every page -->
         {% if paginator.total_posts > site.paginate %}
             {% if page.class == 'home-template' %}
-                {% include post_pagination.html %}
             {% elsif page.class == 'page-template' %}
-                {% include post_pagination.html %}
             {% elsif page.class == 'author-template' %}
-                {% include author_pagination.html %}
             {% elsif page.class == 'tag-template' %}
-                {% include tag_pagination.html %}
             {% else %}
                 {% include post_pagination.html %}
             {% endif %}
@@ -165,12 +161,6 @@
     <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
-    {% if paginator.total_pages > site.paginate %}
-    <script>
-        var maxPages = parseInt('{{ paginator.total_pages }}');
-    </script>
-    <script src="{{ 'assets/js/infinitescroll.js' | relative_url }}"></script>
-    {% endif %}
 
 
     <!-- Add Google Analytics  -->
