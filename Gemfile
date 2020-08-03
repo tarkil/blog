@@ -10,3 +10,4 @@ gem "jekyll-feed",  "~> 0.13.0"
 
 gem 'jekyll-spaceship'
 gem "premonition", "~> 2.0.0"
+gem 'jekyll-polyglot', '~> 1.3', '>= 1.3.3'

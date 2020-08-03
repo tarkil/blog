@@ -9,8 +9,9 @@ tags: jekyll
 class: post-template
 subclass: 'post tag-jekyll'
 author: tarkil
+lang: en
 ---
-¡Hola mundo! Este es el primer _post_ de mi blog :)
+Hello world!! Este es el primer _post_ de mi blog :)
 <!--more-->
 Todavía está a medio hacer, ya que ando configurándolo y solucionando algunos problemillas con [_Jekyll_](https://jekyllrb.com/). Muchos de ellos seguramente sean trivialidades, pero, siendo mi primerita vez con el sistema, seguro que me llevan más tiempo de lo deseado solucionarlos. Por ello, iré escribiendo cómo he configurado el sitio y  solucionando los problemas que he tenido: despliegues automáticos en [GitHub](https://github.com/), enlaces rotos, configurar el dominio en github, ...
 

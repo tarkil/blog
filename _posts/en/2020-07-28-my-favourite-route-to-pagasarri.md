@@ -10,7 +10,9 @@ class: post-template
 subclass: 'post tag-trekking'
 author: tarkil
 disqus: True
+lang: en
 ---
+But it s
 Por su cercanía a la ciudad, el Pagasarri es el monte preferido de los bilbaínos.
 <!--more-->
 El pasado domingo pretendía ir con un amigo a Alonsotegi desde Bilbao siguiendo esta [ruta](https://es.wikiloc.com/rutas-senderismo/erreztaleku-ganeta-pagasarri-lapurzulogana-ganekondo-biderdi-ganekogorta-arrabatxu-y-pagero-hasta-a-11583495). Por desgracia, a mi amigo ese día no le acompañaban las fuerzas y decidimos hacer una ruta más sencilla a mitad de camino. Así que le enseñé la ruta, que para mi gusto, es la más bonita para ir al monte bilbaíno por excelencia.
