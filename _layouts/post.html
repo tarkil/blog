@@ -140,7 +140,9 @@ disqus: false
                     <script>
                         var disqus_config = function () {
                             this.page.url = '{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}';
-                            this.page.identifier = '{{ post.title }}';
+                            this.page.identifier = '{{ page.title }}';
+                            this.language = '{{ site.active_lang }}'
+
                         };
                         (function() {
                             var d = document, s = d.createElement('script');

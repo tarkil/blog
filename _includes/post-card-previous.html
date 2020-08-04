@@ -43,11 +43,11 @@
                                 {{  author[1].name }}
                             </div>
                             {% if author[1].picture %}
-                            <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ page.previous.author }}/"  class="static-avatar">
+                            <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.previous.author }}/"  class="static-avatar">
                                 <img class="author-profile-image" src="{{ author[1].picture | relative_url }}" alt="{{ author[1].name }}" />
                             </a>
                             {% else %}
-                            <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ page.previous.author }}/"  class="static-avatar">
+                            <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.previous.author }}/"  class="static-avatar">
                                 <img class="author-profile-image" src="{{ 'todo: blank.png' | relative_url }}" alt="{{ author[1].name }}" />
                             </a>
                             {% endif %}
@@ -59,7 +59,7 @@
                     <!-- TODO: SUpport multiple authors 
                     <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                     -->
-                    <span><a href="{{ 'author/' | relative_url }}{{ page.previous.author }}/">{{ page.previous.author }}</a></span>
+                    <span><a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.previous.author }}/">{{ page.previous.author }}</a></span>
 
                     <span class="post-card-byline-date">
                         <time datetime="{{ page.previous.date | date: '%Y-%m-%d %H:%M' }}">{{ page.previous.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
