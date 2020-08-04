@@ -139,9 +139,9 @@ disqus: false
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            this.page.url = '{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}';
-                            this.page.identifier = '{{ page.title }}';
-                            this.language = '{{ site.active_lang }}'
+                            this.page.url = '{{  page.url | absolute_url  }}';
+                            this.page.identifier = '{{  page.url | absolute_url  }}';
+                            this.language = '{{  site.active_lang  }}'
 
                         };
                         (function() {
