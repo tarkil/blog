@@ -2,7 +2,7 @@
 layout: error
 current: error
 title: "404 - Page Not Found"
-permalink: 404.html
+p4ermalink: 404.html
 ---
 <!--
 This error template is used for all 404 errors, which might occur on your site.
@@ -33,8 +33,8 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 
                     <section class="error-message">
                         <h1 class="error-code">404</h1>
-                        <p class="error-description">Page not found</p>
-                        <a class="error-link" href="{{ site.baseurl }}">Go to the front page →</a>
+                        <p class="error-description">{{ site.data[site.active_lang].error-page.pageNotFound }}</p>
+                        <a class="error-link" href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}">{{ site.data[site.active_lang].error-page.goFrontPage }}</a>
                     </section>
                     <div class="post-feed">
                         <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
@@ -45,12 +45,10 @@ It's a good idea to keep this template as minimal as possible in terms of both f
             
             <footer class="site-footer outer">
                 <div class="site-footer-content inner">
-                    <section class="copyright"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
-                    <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
-                        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
-                        <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                    <section class="copyright"><a href="{{ site.baseurl }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
+                    <section class="poweredby">{{ site.data[site.active_lang].error-page.publishedWith }}</section>
                     <nav class="site-footer-nav">
-                        <a href="{{ site.baseurl }}">Latest Posts</a>
+                        {{ site.data[site.active_lang].error-page.language }}
                         {% if site.instagram %}<a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
                         {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
                     </nav>

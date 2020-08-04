@@ -3,19 +3,19 @@
  class="" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" validate name="email"  placeholder="youremail@example.com" autocomplete="false"/>
+        <input class="subscribe-email" type="email" validate name="email"  placeholder="{{ site.data[site.active_lang].subscription.emailPlaceholder }}" autocomplete="false"/>
         <button class="button primary" type="submit" {% unless site.subscribers %}disabled{% endunless %} onclick="$(this).parent('form').submit();  $('#subscribe').hide()">
-            <span class="button-content">Subscribe</span>
+            <span class="button-content"> {{ site.data[site.active_lang].subscription.subscribe }}</span>
             <span class="button-loader"></span>
         </button>
         <input type="hidden" value="ElBlogDeTarkil" name="uri"/>
-        <input type="hidden" name="loc" value="es_ES"/>
+        <input type="hidden" name="loc" value="{{ site.active_lang }}"/>
     </div>
     <div class="message-success">
-        <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+        {{ site.data[site.active_lang].subscription.success }}      
     </div>
     <div class="message-error">
-        Please enter a valid email address!
+        {{ site.data[site.active_lang].subscription.error }}      
     </div>
 
 </form>

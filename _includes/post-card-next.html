@@ -2,7 +2,7 @@
 
     <article class='post-card {% if page.next.class == "post-template" %} post {% else %} {{ page.next.class }} {% endif %}{% unless page.next.cover %} no-image{% endunless %}'>
         {% if page.next.cover %}
-            <a class="post-card-image-link" href="{{ page.next.url | relative_url | remove_first: '/' }}">
+            <a class="post-card-image-link" href="{{site.url}}{% if site.active_lang != site.default_lang %}/{{ site.active_lang }}{% endif %}{{ page.next.url }}">
                 <img class="post-card-image" src="{{ page.next.cover | relative_url }}"
                 loading="lazy"
                     alt="{{ page.next.title }}"
@@ -11,7 +11,7 @@
             </a>
         {% endif %}
         <div class="post-card-content">
-            <a class="post-card-content-link" href="{{ page.next.url | relative_url | remove_first: '/' }}">
+            <a class="post-card-content-link" href="{{site.url}}{% if site.active_lang != site.default_lang %}/{{ site.active_lang }}{% endif %}{{ page.next.url }}">
                 <header class="post-card-header">
                     {% if page.next.tags.size > 0 %}
                         {% for tag in page.next.tags %}
@@ -28,9 +28,9 @@
                 
                 <section class="post-card-excerpt">
                     {%if page.next.cover %}
-                        <p>{{ page.next.content | strip_html | truncatewords: 30, "" }}</p>
+                        <p>{{ page.next.content |  truncatewords: 30, "" }}</p>
                     {% else %}
-                        <p>{{ page.next.content | strip_html | truncatewords: 44, "" }}</p>
+                        <p>{{ page.next.content | truncatewords: 44, "" }}</p>
                     {% endif %}
                 </section>
                 
@@ -44,11 +44,11 @@
                                 {{  author[1].name }}
                             </div>
                             {% if author[1].picture %}
-                                <a href="{{ 'author/' | relative_url }}{{ page.next.author }}/"  class="static-avatar">
+                                <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.next.author }}/"  class="static-avatar">
                                     <img class="author-profile-image" src="{{ author[1].picture | relative_url }}" alt="{{ author[1].name }}" />
                                 </a>
                             {% else %}
-                                <a href="{{ 'author/' | relative_url }}{{ page.next.author }}/"  class="static-avatar">
+                                <a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.next.author }}/"  class="static-avatar">
                                     <img class="author-profile-image" src="{{ 'todo: blank.png' | relative_url }}" alt="{{ author[1].name }}" />
                                 </a>
                             {% endif %}
@@ -60,7 +60,7 @@
                     <!-- TODO: SUpport multiple authors 
                     <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                     -->
-                    <span><a href="{{ 'author/' | relative_url }}{{ page.next.author }}/">{{ page.next.author }}</a></span>
+                    <span><a href="{{site.url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.next.author }}/">{{ page.next.author }}</a></span>
 
                     <span class="post-card-byline-date">
                         <time datetime="{{ page.next.date | date: '%Y-%m-%d %H:%M' }}">{{ page.next.date | date_to_string  }}</time> <span class="bull">&bull;</span> 
@@ -70,7 +70,7 @@
                         {% else %}
                         {{ words | divided_by:words_per_minute }} 
                         {% endif %}
-                        MIN READ
+                        {{ site.data[site.active_lang].post-card-next.readTime }}      
                     </span>
                 </div>
             </footer>

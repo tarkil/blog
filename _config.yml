@@ -84,7 +84,6 @@ source_url:  https://github.com/tarkil/blog/
 
 exclude:
   - assets/css
-  - assets/js
   - node_modules
   - vendor
   - .travis.yml
@@ -106,3 +105,5 @@ languages: ["es", "en"]
 default_lang: "es"
 exclude_from_localization: ["javascript", "images", "css", "README.md"]
 parallel_localization: false
+sass:
+    sourcemap: never

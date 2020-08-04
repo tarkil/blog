@@ -1,0 +1,7 @@
+subscribeTo: Subscribirse a
+subscriptionDescription: Te enviaremos a tu correo los nuevos artículos.
+subscriptionSuccess: ¡Hecho! Subscripción al blog de Tarkil completada
+publishedWith: Publicado con <a href="https://jekyllrb.com/">Jekyll</a> y
+   <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> usando una versión propia de 
+   <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a>
+language: <a href="https://tarkil.dev/en">English</a>

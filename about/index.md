@@ -6,6 +6,8 @@ navigation: true
 logo: 'assets/images/logo.png'
 class: page-template
 subclass: 'post page'
+permalink: about/
+lang: es
 ---
 
 El objetivo de este blog es recoger todo aquello que me parezca interesante de ser contado. Por ejemplo:

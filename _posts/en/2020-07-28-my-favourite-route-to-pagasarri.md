@@ -2,7 +2,7 @@
 layout: post
 current: post
 navigation: True
-title: Mi ruta preferida al Pagasarri
+title: My Favourite Route To Pagasarri
 date: 2020-07-28 00:00:00
 cover: https://lh3.googleusercontent.com/pw/ACtC-3fhd3X8ESi3tW41KQbZ327qWatBuVdf3gW-gLCJc5LzpiXfl43hYLh-pPpcN3ubH_sTLEitVUyIp4c5KVZgOSLDwJqZhGZexWcb5H1zR8UirafCR23EJUI8NOO3ISasvDMqZi7DS6xri739ekHtBteCVA=w1928-h1280-no?authuser=0
 tags: trekking
