@@ -141,7 +141,7 @@ disqus: false
                         var disqus_config = function () {
                             this.page.url = '{{ site.production_url }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{  page.url  | remove_first: '/' }}';
                             this.page.identifier = '{{ site.production_url }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{  page.url | remove_first: '/'  }}';
-                            this.language = '{{  site.active_lang  }}'
+                            this.language = '{{  site.data[site.active_lang].post.disqusLanguage  }}'
 
                         };
                         (function() {
