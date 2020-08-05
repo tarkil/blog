@@ -99,7 +99,7 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        padding: 40px 0 5vw;
+        padding: 40px 0 0vw;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
     }
@@ -608,6 +608,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .posts {
     overflow-x: hidden;
+    padding: 0px 0 5vw;
 }
 
 .post-feed {
@@ -836,6 +837,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: inline-block;
 }
 
+nav.pagination {
+    text-align: center;
+}
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
@@ -1389,6 +1393,36 @@ Usage (In Ghost editor):
 .footnotes p {
     margin: 0;
 }
+
+.newer-posts {
+    float: left;
+}
+
+.older-posts {
+    float: right;
+}
+
+.newer-posts, .older-posts {
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    color: grey;
+    display: inline-block;
+}
+
+a.newer-posts, a.older-posts {
+    text-decoration: none;
+}
+
+a.newer-posts:hover, a.older-posts:hover {
+    text-decoration: none;
+
+    position: inherit;
+    background-color:#000;
+    opacity:0.5;
+}
+
 
 .footnote-backref {
     color: var(--blue) !important;

@@ -1,13 +1,13 @@
 <nav class="pagination" role="pagination">
     {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
-            <a class="newer-posts" href="{{ 'author/' | relative_url }}{{ page.author }}" title="Previous Page">&laquo; Newer Posts</a>
+            <a class="newer-posts" href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.author }}" title="Previous Page"><span aria-hidden="true">←</span> {{ site.data[site.active_lang].pagination.new }}</a>
         {% else %}
-            <a class="newer-posts" href="{{ 'author/' | relative_url }}{{ page.author }}/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
+            <a class="newer-posts" href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.author }}/page{{ paginator.previous_page }}/" title="Previous Page"><span aria-hidden="true">←</span> {{ site.data[site.active_lang].pagination.new }}</a>
       {% endif %}
     {% endif %}
-    <span class="page-number"> Page {{ paginator.page }} of {{ paginator.total_pages }} </span>
+    <span class="page-number"> {{ site.data[site.active_lang].pagination.page }} {{ paginator.page }} {{ site.data[site.active_lang].pagination.of }} {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-        <a class="older-posts" href="{{ 'author/' | relative_url}}{{ page.author }}/page{{ paginator.next_page }}/" title="Next Page">Older Posts &raquo;</a>
+        <a class="older-posts" href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}author/{{ page.author }}/page{{ paginator.next_page }}/" title="Next Page">{{ site.data[site.active_lang].pagination.old }} <span aria-hidden="true">→</span></a>
     {% endif %}
 </nav>

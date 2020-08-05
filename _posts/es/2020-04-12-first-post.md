@@ -9,6 +9,7 @@ tags: jekyll
 class: post-template
 subclass: 'post tag-jekyll'
 author: tarkil
+lang: es
 ---
 ¡Hola mundo! Este es el primer _post_ de mi blog :)
 <!--more-->

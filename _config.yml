@@ -1,8 +1,8 @@
 # Jekyll configuration
 markdown: kramdown
 highlighter: rouge
-paginate: 100 # it will paginate after this number
-language: 'es-es'
+paginate: 10 # it will paginate after this number
+language: 'es'
 words_per_minute: 200
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
@@ -21,15 +21,15 @@ CNAME: #add cname for website to be created
 
 # Social info
 navigation: True # show the navbar links
-subscribers: False # you need to connect an external service for this to work,
+subscribers: True # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
 twitter: tarkil # replace by your username
 #facebook: ghost # replace by your username
 instagram: el_blog_de_tarkil
 # Disqus
-disqus: False
-disqus_shortname: jekyller # replace with your disqus username
+disqus: True
+disqus_shortname: tarkil # replace with your disqus username
 
 # Google Analytics
 # google_analytics: UA-69281367-1 # replace with your GA tracking identifier
@@ -49,6 +49,8 @@ plugins:
   - jekyll-feed
   - jekyll-spaceship
   - premonition
+  - jekyll-polyglot
+
 feed:
   path: feed.xml
 
@@ -95,6 +97,13 @@ exclude:
   - README.md
   - script.py
   - changelog.md
-  - "*.Rmd"
-  - .git*
+  - .gitignore
+  - .jekyll-cache
+  - package-lock.json
 excerpt_separator: <!--more-->
+languages: ["es", "en"]
+default_lang: "es"
+exclude_from_localization: ["javascript", "images", "css", "README.md"]
+parallel_localization: false
+sass:
+    sourcemap: never

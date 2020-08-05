@@ -3,9 +3,9 @@
         <div class="site-nav-left">
 
             {% if site.logo %}
-                <a class="site-nav-logo" href="{{ site.url }}{{ site.baseurl }}"><img src="{{ site.logo |  | relative_url }}" alt="{{ site.title }}" /></a>
+                <a class="site-nav-logo" href="{{ site.baseurl }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}{% endif %}"><img src="{{ site.logo |  | relative_url }}" alt="{{ site.title }}" /></a>
             {% else %}
-                <a class="site-nav-logo" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
+                <a class="site-nav-logo" href="{{ site.baseurl }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}{% endif %}">{{ site.title }}</a>
             {% endif %}
             <div class="site-nav-content">
 
@@ -35,7 +35,7 @@
             {% endif %}
         </div>
         {% if site.subscribers %}
-            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+            <a class="subscribe-button" href="#subscribe">{{ site.data[site.active_lang].header.subscribe }}</a>
         {% endif %}
     </div>
 </nav>

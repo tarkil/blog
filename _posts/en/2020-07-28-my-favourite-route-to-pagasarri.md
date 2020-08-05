@@ -2,7 +2,7 @@
 layout: post
 current: post
 navigation: True
-title: Mi ruta preferida al Pagasarri
+title: My Favourite Route To Pagasarri
 date: 2020-07-28 00:00:00
 cover: https://lh3.googleusercontent.com/pw/ACtC-3fhd3X8ESi3tW41KQbZ327qWatBuVdf3gW-gLCJc5LzpiXfl43hYLh-pPpcN3ubH_sTLEitVUyIp4c5KVZgOSLDwJqZhGZexWcb5H1zR8UirafCR23EJUI8NOO3ISasvDMqZi7DS6xri739ekHtBteCVA=w1928-h1280-no?authuser=0
 tags: trekking
@@ -10,7 +10,9 @@ class: post-template
 subclass: 'post tag-trekking'
 author: tarkil
 disqus: True
+lang: en
 ---
+But it s
 Por su cercanía a la ciudad, el Pagasarri es el monte preferido de los bilbaínos.
 <!--more-->
 El pasado domingo pretendía ir con un amigo a Alonsotegi desde Bilbao siguiendo esta [ruta](https://es.wikiloc.com/rutas-senderismo/erreztaleku-ganeta-pagasarri-lapurzulogana-ganekondo-biderdi-ganekogorta-arrabatxu-y-pagero-hasta-a-11583495). Por desgracia, a mi amigo ese día no le acompañaban las fuerzas y decidimos hacer una ruta más sencilla a mitad de camino. Así que le enseñé la ruta, que para mi gusto, es la más bonita para ir al monte bilbaíno por excelencia.

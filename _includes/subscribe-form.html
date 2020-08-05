@@ -1,9 +1,21 @@
-<form method="post" action="/subscribe/" class="">
-    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+<form data-members-form="subscribe" method="post" action="https://feedburner.google.com/fb/a/mailverify" method="post"
+ target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=ElBlogDeTarkil', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+ class="" >
 
     <div class="form-group">
-        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+        <input class="subscribe-email" type="email" validate name="email"  placeholder="{{ site.data[site.active_lang].subscription.emailPlaceholder }}" autocomplete="false"/>
+        <button class="button primary" type="submit" {% unless site.subscribers %}disabled{% endunless %} onclick="$(this).parent('form').submit();  $('#subscribe').hide()">
+            <span class="button-content"> {{ site.data[site.active_lang].subscription.subscribe }}</span>
+            <span class="button-loader"></span>
+        </button>
+        <input type="hidden" value="ElBlogDeTarkil" name="uri"/>
+        <input type="hidden" name="loc" value="{{ site.active_lang }}"/>
     </div>
-    <button class="" type="submit" {% unless site.subscribe %}disabled{% endunless %}><span>Subscribe</span></button>
-    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+    <div class="message-success">
+        {{ site.data[site.active_lang].subscription.success }}      
+    </div>
+    <div class="message-error">
+        {{ site.data[site.active_lang].subscription.error }}      
+    </div>
+
 </form>

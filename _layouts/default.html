@@ -41,13 +41,9 @@
         <!-- Previous/next page links - displayed on every page -->
         {% if paginator.total_posts > site.paginate %}
             {% if page.class == 'home-template' %}
-                {% include post_pagination.html %}
             {% elsif page.class == 'page-template' %}
-                {% include post_pagination.html %}
             {% elsif page.class == 'author-template' %}
-                {% include author_pagination.html %}
             {% elsif page.class == 'tag-template' %}
-                {% include tag_pagination.html %}
             {% else %}
                 {% include post_pagination.html %}
             {% endif %}
@@ -56,12 +52,10 @@
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
-                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
-                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
-                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <section class="copyright"><a href="{{ site.baseurl }}{% if site.active_lang != site.default_lang %}{{ site.active_lang }}{% endif %}">{{ site.title }}</a> &copy; {{  site.time | date: '%Y' }}</section>
+                <section class="poweredby">{{ site.data[site.active_lang].default.publishedWith }}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{ site.baseurl }}">Latest Posts</a>
+                    {{ site.data[site.active_lang].default.language }}
                     {% if site.instagram %}<a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
                     {% if site.twitter %}<a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>{% endif %}
                 </nav>
@@ -72,15 +66,22 @@
 
     <!-- The big email subscribe modal content -->
     {% if site.subscribers %}
+        <div class="subscribe-success-message">
+            <a class="subscribe-close" href="javascript:;"></a>
+            {{ site.data[site.active_lang].default.subscriptionSuccess }}
+        </div>
         <div id="subscribe" class="subscribe-overlay">
-            <a class="subscribe-overlay-close" href="#"></a>
+            <a class="subscribe-close-overlay" href="#"></a>
+            <a class="subscribe-close-button" href="#"></a>
             <div class="subscribe-overlay-content">
                 {% if site.logo %}
                     <img class="subscribe-overlay-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}" />
                 {% endif %}
-                <h1 class="subscribe-overlay-title">Subscribe to {{ site.title }}</h1>
-                <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
-                {% include subscribe-form.html placeholder="youremail@example.com" %}
+                <div class="subscribe-form">
+                    <h1 class="subscribe-overlay-title">{{ site.data[site.active_lang].default.subscribeTo }} {{ site.title }}</h1>
+                    <p class="subscribe-overlay-description">{{ site.data[site.active_lang].default.subscriptionDescription }}</p>
+                    {% include subscribe-form.html %}
+                </div>
             </div>
         </div>
     {% endif %}
@@ -158,12 +159,6 @@
     <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
-    {% if paginator.total_pages > site.paginate %}
-    <script>
-        var maxPages = parseInt('{{ paginator.total_pages }}');
-    </script>
-    <script src="{{ 'assets/js/infinitescroll.js' | relative_url }}"></script>
-    {% endif %}
 
 
     <!-- Add Google Analytics  -->
@@ -178,5 +173,25 @@
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
     <!-- ghost_foot -->
+
+    <script src="https://cmp.osano.com/AzyvxFS68riHzYy4/34e115ef-73c6-4fcd-983c-73ac709601d3/osano.js"></script>
+   <!-- <script>
+        window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+            "background": "#000"
+            },
+            "button": {
+            "background": "#f1d600"
+            }
+        },   
+        "content": {
+            "message": "{{ site.data[site.active_lang].default.cookieMessage }}",
+            "dismiss": "{{ site.data[site.active_lang].default.cookieAccept }}",
+            "link": "{{ site.data[site.active_lang].default.cookieLearnMore }}",
+            "href": "https://www.cookiesandyou.com/"
+        }
+        });
+    </script> -->
 </body>
 </html>
