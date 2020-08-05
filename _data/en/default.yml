@@ -5,3 +5,6 @@ publishedWith: Proudly published with <a href="https://jekyllrb.com/">Jekyll</a>
    <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> using a custom modified version of 
    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a>
 language: <a href="https://tarkil.dev/">Español</a>
+cookieMessage: This website uses cookies to ensure you get the best experience on our website.
+cookieAccept: Got it!
+cookieLearnMore: Learn more
