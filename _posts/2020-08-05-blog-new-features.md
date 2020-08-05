@@ -1,7 +1,7 @@
 ---
 layout: post
 current: post
-cover: https://lh3.googleusercontent.com/AZufoxZLlc5oAu5XNTKvhdlDkb-EyFvLEri6s-xa0T_BzNPD0ImkjAhx3hWCCmW-x4j-06qtXCYpKPpx51kvJHuKTrQc-d320wfn1lX7XCLUkEmIV0rtQBGPYszYLo2Zre0wdChlTSg=w958-h423-no
+cover: https://lh3.googleusercontent.com/pw/ACtC-3fOC5u584UCwQ0elKSRJkZcLQt0xuFUpA_0bcY1PL0LkeFZ5bhTaQoZO19bCcCVqLZ0ZSJkFQexClcJW2yYMU1109dGfoavnr5F1Fgkx_S0zKEUZY3b5sw7IOJJ5lnDNsQxtm4o7O68E8N8213f5V8qmw=w1400-h933-no?authuser=0
 navigation: True
 title: Nuevas funcionalidades
 date: 2020-08-05 00:00:00
