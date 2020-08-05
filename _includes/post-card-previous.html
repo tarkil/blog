@@ -28,9 +28,9 @@
                 </header>
                 <section class="post-card-excerpt">
                     {% if page.previous.cover %}
-                        <p>{{ page.previous.content | strip_html | truncatewords: 30, "" }}</p>
+                        <p>{{ page.previous.content | truncatewords: 30, "" }}</p>
                     {% else %}
-                        <p>{{ page.previous.content | strip_html | truncatewords: 40, "" }}</p>
+                        <p>{{ page.previous.content | truncatewords: 40, "" }}</p>
                     {% endif %}
                 </section>
             </a>
