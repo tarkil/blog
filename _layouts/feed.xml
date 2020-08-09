@@ -3,12 +3,12 @@ layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
 {% if page.xsl %}
-  <?xml-stylesheet type="text/xml" href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}/feed.xslt.xml"?>
+  <?xml-stylesheet type="text/xml" href="{{site.production_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}/feed.xslt.xml"?>
 {% endif %}
 <feed xmlns="http://www.w3.org/2005/Atom" {% if site.active_lang %}xml:lang="{{ site.active_lang }}"{% endif %}>
   <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
-  <link href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}" rel="self" type="application/atom+xml" />
-  <link href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}" rel="alternate" type="text/html" {% if site.lang %}hreflang="{{ site.active_lang }}" {% endif %}/>
+  <link href="{{site.production_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}" rel="self" type="application/atom+xml" />
+  <link href="{{site.production_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}" rel="alternate" type="text/html" {% if site.lang %}hreflang="{{ site.active_lang }}" {% endif %}/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ page.url | absolute_url | xml_escape }}</id>
 
@@ -67,11 +67,11 @@ layout: null
   {% for post in posts limit: 10 %}
     <entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
       <title type="html">{{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
-      <link href="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ post.url | remove_first: '/' }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+      <link href="{{site.production_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ post.url | remove_first: '/' }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
       <published>{{ post.date | date_to_xmlschema }}</published>
       <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
       <id>{{ post.id | absolute_url | xml_escape }}</id>
-      <content type="html" xml:base="{{site.base_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ post.url | remove_first: '/' }}">{{ post.content | strip | xml_escape }}</content>
+      <content type="html" xml:base="{{site.production_url}}/{% if site.active_lang != site.default_lang %}{{ site.active_lang }}/{% endif %}{{ post.url | remove_first: '/' }}">{{ post.content | strip | xml_escape }}</content>
 
       {% assign post_author = post.author | default: post.authors[0] | default: site.author %}
       {% assign post_author = site.data.authors[post_author] | default: post_author %}
